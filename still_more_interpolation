@@ -1,0 +1,58 @@
+from math import*
+# By submitting this assignment, I agree to the following:
+# "Aggies do not lie, cheat, or steal, or tolerate those who do."
+# "I have not given or received any unauthorized aid on this assignment."
+#
+# Names: Jason Arteaga
+# Noah Castillo
+# Alex Alvarez
+# Anthony Reyes
+# Section: 102 MO2
+# Assignment: LAB: Topic 3 (Team)
+# Date: 9 9 2026
+t1=float(input("Enter time 1:"))
+x1=float(input(" Enter the x position of the object at time 1:"))
+y1=float(input(" Enter the y position of the object at time 1:"))
+z1=float(input(" Enter the z position of the object at time 1:"))
+t2=float(input(" Enter time 2:"))
+x2=float(input(" Enter the x position of the object at time 2:"))
+y2=float(input(" Enter the y position of the object at time 2:"))
+z2=float(input(" Enter the z position of the object at time 2: "))
+print()
+def slopex():
+    totalx= (x2-x1)/(t2-t1)
+    return totalx
+def slopey():
+    totaly= (y2-y1)/(t2-t1)
+    return totaly
+def slopez():
+    totalz= (z2-z1)/(t2-t1)
+    return totalz
+varx= slopex()
+vary= slopey()
+varz= slopez()
+split = ((t2-t1)/4)
+splitx = (x2-x1)/4
+splity= (y2-y1)/4
+splitz= (z2-z1)/4
+print(f"At time {t1:.2f} seconds the object is at ({x1:.3f}, {y1:.3f}, {z1:.3f})")
+t3= t1+split
+x3= x1 +splitx
+y3= y1 + splity
+z3= z1 +splitz
+print(f"At time {t3:.2f} seconds the object is at ({x3:.3f}, {y3:.3f}, {z3:.3f})")
+t3= t1+ split*2
+x3= x1 +splitx*2
+y3= y1 + splity*2
+z3= z1 +splitz*2
+print(f"At time {t3:.2f} seconds the object is at ({x3:.3f}, {y3:.3f}, {z3:.3f})")
+t3= t1+split*3
+x3= x1 +splitx*3
+y3= y1 + splity*3
+z3= z1 +splitz*3
+print(f"At time {t3:.2f} seconds the object is at ({x3:.3f}, {y3:.3f}, {z3:.3f})")
+t3= t1+split*4
+x3= x1 +splitx*4
+y3= y1 + splity*4
+z3= z1 +splitz*4
+print(f"At time {t3:.2f} seconds the object is at ({x3:.3f}, {y3:.3f}, {z3:.3f})")

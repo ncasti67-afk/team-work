@@ -1,0 +1,51 @@
+# By submitting this assignment, I agree to the following:
+# "Aggies do not lie, cheat, or steal, or tolerate those who do."
+# "I have not given or received any unauthorized aid on this assignment."
+#
+# Names: Jason Arteaga
+# Noah Castillo
+# Alex Alvarez
+# Anthony Reyes
+# Section: MO2
+# Assignment: THE ASSIGNMENT NUMBER (team lab topic 6)
+# Date: 9/23/2026
+#
+from math import *
+x = float(input("Enter a value for x: "))
+tolerance = float(input("Enter the tolerance: "))
+
+if  (0 < x) and (x <= 2) :
+    exact_ln = log(x)
+    other_ln= 0
+    x1 = 1
+    term = (x -1 )** x1/ x1
+    while term >= tolerance:
+        if x1 % 2 == 1:
+            other_ln += term
+        else:
+            other_ln -= term
+        x1 +=1
+        term= ((x-1)**x1)/x1
+    print(f"ln({x}) is approximately {other_ln}")
+    print(f"ln({x}) is exactly {exact_ln}")
+    diff = other_ln - exact_ln
+    print(f"The difference is {diff}")
+else: 
+    while x<0 or x > 2:
+        x=float(input("Out of range! Try again: "))
+    exact_ln = log(x)
+    other_ln= 0
+    x1 = 1
+    term = (x -1 )** x1/ x1
+    while term >= tolerance:
+        if x1 % 2 == 1:
+            other_ln += term
+        else:
+            other_ln -= term
+        x1 +=1
+        term= ((x-1)**x1)/x1
+    diff =  exact_ln-other_ln
+    print(f"ln({x}) is approximately {other_ln}")
+    print(f"ln({x}) is exactly {exact_ln}")
+    print(f"The diffrence is {diff}")
+#in order to find approximate we had to use taylor series expresion thorugh loops 

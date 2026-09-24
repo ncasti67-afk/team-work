@@ -1,0 +1,20 @@
+# By submitting this assignment, I agree to the following:
+# "Aggies do not lie, cheat, or steal, or tolerate those who do."
+# "I have not given or received any unauthorized aid on this assignment."
+#
+# Names: Jason Arteaga
+# Noah Castillo
+# Alex Alvarez
+# Anthony Reyes
+# Section: MO2
+# Assignment: THE ASSIGNMENT NUMBER (team lab topic 6)
+# Date: 9/23/2026
+#
+length = float(input("Enter the side length in meters: "))
+layers = int(input("Enter the number of layers: "))
+arithmetic = (layers*(layers+1))/2
+top_area = layers * layers
+side_area = 4* arithmetic
+total = (top_area+side_area)*length**2 
+print(f"You need {total:.2f} m^2 of gold foil to cover the pyramid")
+#in order to solve this one we essentailly had to use the same equation as we used in boolean expression

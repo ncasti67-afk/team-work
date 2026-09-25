@@ -12,14 +12,15 @@
 #
 from math import *
 x = float(input("Enter a value for x: "))
-tolerance = float(input("Enter the tolerance: "))
+
 
 if  (0 < x) and (x <= 2) :
+    tolerance = float(input("Enter the tolerance: "))
     exact_ln = log(x)
-    other_ln= 0
-    x1 = 1
+    other_ln= 0.0
+    x1 = 1.0
     term = (x -1 )** x1/ x1
-    while term >= tolerance:
+    while abs(term) >= tolerance:
         if x1 % 2 == 1:
             other_ln += term
         else:
@@ -31,21 +32,22 @@ if  (0 < x) and (x <= 2) :
     diff = other_ln - exact_ln
     print(f"The difference is {diff}")
 else: 
-    while x<0 or x > 2:
+    while x<=0 or x > 2:
         x=float(input("Out of range! Try again: "))
     exact_ln = log(x)
-    other_ln= 0
-    x1 = 1
+    other_ln= 0.0
+    x1 = 1.0
+    tolerance = float(input("Enter the tolerance: "))
     term = (x -1 )** x1/ x1
-    while term >= tolerance:
+    while abs(term) >= tolerance:
         if x1 % 2 == 1:
             other_ln += term
         else:
             other_ln -= term
         x1 +=1
         term= ((x-1)**x1)/x1
-    diff =  exact_ln-other_ln
+    diff = other_ln -exact_ln
     print(f"ln({x}) is approximately {other_ln}")
     print(f"ln({x}) is exactly {exact_ln}")
-    print(f"The diffrence is {diff}")
-#in order to find approximate we had to use taylor series expresion thorugh loops 
+    print(f"The difference is {abs(diff)}")
+# in order to find approximate we had to use taylor series expresion thorugh loops 
